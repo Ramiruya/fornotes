@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter.filedialog import askopenfilename, asksaveasfilename
+from tkinter import ttk
 import ctypes
 from functools import partial
 from json import loads, dumps
@@ -52,8 +53,12 @@ TagTypes = {
     }
 
 TextArea = Text(root, font=f'{FontName} 15', relief=FLAT)
-TextArea.pack(fill=BOTH, expand=TRUE, padx=padding, pady = padding)
+TextArea.pack(fill=BOTH, expand=False, padx=20, pady = 10)
 
+TabControl = ttk.Notebook(root)
+TabControl.pack(pady=5, expand = True)
+tab1 = Frame(TabControl, width=400, height=300)
+TabControl.add(tab1, text='1')
 
 
 root.mainloop()
